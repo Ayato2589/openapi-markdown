@@ -1,10 +1,9 @@
+import { runApp } from "./app/app";
 import { parseArgs } from "./cli/args";
 
-function main() {
-    const { inputPath, outputPath } = parseArgs();
-
-    console.log(`inputPath: ${inputPath}`);
-    console.log(`outputPath: ${outputPath}`);
+function main(argv: string[]) {
+    const { inputPath, outputPath } = parseArgs(argv);
+    runApp(inputPath, outputPath);
 }
 
-main();
+main(process.argv);
