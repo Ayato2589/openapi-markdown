@@ -1,4 +1,4 @@
-import { parseArgs } from "./cli/parser";
+import { parseArgs } from "./cli/args";
 
 function main() {
     const { inputPath, outputPath } = parseArgs();
