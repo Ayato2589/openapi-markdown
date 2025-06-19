@@ -1,5 +1,10 @@
+import { parseArgs } from "./cli/parser";
+
 function main() {
-    console.log("Hello World");
+    const { inputPath, outputPath } = parseArgs();
+
+    console.log(`inputPath: ${inputPath}`);
+    console.log(`outputPath: ${outputPath}`);
 }
 
 main();
