@@ -8,8 +8,6 @@ export type Args = {
 }
 
 export function parseArgs(argv: string[]): Args {
-    console.table(argv);
-
     const program = new Command();
 
     program

@@ -10,36 +10,34 @@ type TestCase = {
 
 const dummyEnvArgs = ['dummyNode', 'dummyScript'];
 
+const testCases: TestCase[] = [
+    {
+        name: '正常系: inputと-oを指定',
+        argv: [...dummyEnvArgs, 'api.yaml', '-o', 'api.md'],
+        shouldThrow: false,
+        expected: { inputPath: "api.yaml", outputPath: "api.md" },
+    },
+    {
+        name: "異常系: 引数が空",
+        argv: [...dummyEnvArgs],
+        shouldThrow: true,
+        expected: null,
+    },        
+    {
+        name: "異常系: -o がない",
+        argv: [...dummyEnvArgs, "api.yaml"],
+        shouldThrow: true,
+        expected: null,
+    },
+    {
+        name: "異常系: -o のあとに値がない",
+        argv: [...dummyEnvArgs, "api.yaml", "-o"],
+        shouldThrow: true,
+        expected: null,
+    }
+];
+
 describe('コマンドライン引数を正しく解析できるかをテスト', () => {
-    const testCases: TestCase[] = [
-        {
-            name: '正常系: inputと-oを指定',
-            argv: [...dummyEnvArgs, 'api.yaml', '-o', 'api.md'],
-            shouldThrow: false,
-            expected: { inputPath: "api.yaml", outputPath: "api.md" },
-        },
-        {
-            name: "異常系: 引数が空",
-            argv: [...dummyEnvArgs],
-            shouldThrow: true,
-            expected: null,
-        },        
-        {
-            name: "異常系: -o がない",
-            argv: [...dummyEnvArgs, "api.yaml"],
-            shouldThrow: true,
-            expected: null,
-        },
-        {
-            name: "異常系: -o のあとに値がない",
-            argv: [...dummyEnvArgs, "api.yaml", "-o"],
-            shouldThrow: true,
-            expected: null,
-        }
-
-    ];
-
-    // テストケースを実行
     testCases.forEach(({ name, argv, expected, shouldThrow }) => {
         it(name, () => {
             if (shouldThrow) {
