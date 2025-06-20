@@ -11,12 +11,12 @@ type TestCase = {
 const testcases: TestCase[] = [
     {
         name: '正常系: 正しいパスを指定',
-        filePath: path.resolve(__dirname, 'data/sample-petstore-api.yaml'),
+        filePath: path.resolve(__dirname, 'data/input/sample-petstore-api.yaml'),
         shouldThrow: false,
     },
     {
         name: '異常系: 存在しないパスを指定',
-        filePath: path.resolve(__dirname, 'data/nonexistent.yaml'),
+        filePath: path.resolve(__dirname, 'data/input/nonexistent.yaml'),
         shouldThrow: true,
     },
 ];
