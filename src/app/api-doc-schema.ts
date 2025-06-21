@@ -1,7 +1,10 @@
 import { OpenAPI } from "openapi-types";
-import { MdContent } from "./md-tree";
 
-export function extractMdContent(apiDoc: OpenAPI.Document): MdContent {
+export type ApiDocSchema = {
+    endpoints: string[];
+};
+
+export function generateApiDocSchema(apiDoc: OpenAPI.Document): ApiDocSchema {
     const endpoints = Object.keys(apiDoc.paths || {});
 
     return {

@@ -1,11 +1,10 @@
 import { Root } from "mdast";
+import { ApiDocModel } from "./api-doc-schema.js";
+import { toMarkdown } from "mdast-util-to-markdown";
 
-export type MdContent = {
-    endpoints: string[];
-};
-
-export function generateMdTree(content: MdContent): Root {
-    return {
+export function generateMd(apiDocModel: ApiDocModel): string {
+    // HACK: ツリーを分割した方が読みやすい
+    const tree: Root = {
         type: 'root',
         children: [
             {
@@ -16,7 +15,7 @@ export function generateMdTree(content: MdContent): Root {
             {
                 type: 'list',
                 ordered: false,
-                children: content.endpoints.map(endpoint => ({
+                children: apiDocModel.endpoints.map(endpoint => ({
                     type: 'listItem',
                     children: [
                         {
@@ -29,5 +28,7 @@ export function generateMdTree(content: MdContent): Root {
                 })),
             },
         ],
-    };
+    }
+
+    return toMarkdown(tree);
 }
