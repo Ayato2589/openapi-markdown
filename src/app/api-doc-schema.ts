@@ -1,10 +1,10 @@
 import { OpenAPI } from "openapi-types";
 
-export type ApiDocModel = {
+export type ApiDocSchema = {
     endpoints: string[];
 };
 
-export function generateApiDocModel(apiDoc: OpenAPI.Document): ApiDocModel {
+export function generateApiDocSchema(apiDoc: OpenAPI.Document): ApiDocSchema {
     const endpoints = Object.keys(apiDoc.paths || {});
 
     return {

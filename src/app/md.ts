@@ -1,5 +1,5 @@
 import { Root } from "mdast";
-import { ApiDocModel } from "./api-doc-model.js";
+import { ApiDocModel } from "./api-doc-schema.js";
 import { toMarkdown } from "mdast-util-to-markdown";
 
 export function generateMd(apiDocModel: ApiDocModel): string {
