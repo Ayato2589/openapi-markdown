@@ -1,0 +1,1 @@
+npm run dev -- test/data/input/sample-petstore-api.yaml -o test/data/output/api.md
