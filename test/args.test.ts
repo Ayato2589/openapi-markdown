@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { Args, parseArgs } from "../src/cli/args";
+import { Args, parseArgs } from "../src/cli/args.js";
 
 type TestCase = {
     name: string;

@@ -1,29 +1,41 @@
-# エンドポイント一覧
+## エンドポイント一覧
 
-* `/pet/{petId}/uploadImage`
+* `POST /pet/{petId}/uploadImage`
 
-* `/pet`
+* `POST /pet`
 
-* `/pet/findByStatus`
+* `PUT /pet`
 
-* `/pet/findByTags`
+* `GET /pet/findByStatus`
 
-* `/pet/{petId}`
+* `GET /pet/findByTags`
 
-* `/store/inventory`
+* `GET /pet/{petId}`
 
-* `/store/order`
+* `POST /pet/{petId}`
 
-* `/store/order/{orderId}`
+* `DELETE /pet/{petId}`
 
-* `/user/createWithList`
+* `GET /store/inventory`
 
-* `/user/{username}`
+* `POST /store/order`
 
-* `/user/login`
+* `GET /store/order/{orderId}`
 
-* `/user/logout`
+* `DELETE /store/order/{orderId}`
 
-* `/user/createWithArray`
+* `POST /user/createWithList`
 
-* `/user`
+* `GET /user/{username}`
+
+* `PUT /user/{username}`
+
+* `DELETE /user/{username}`
+
+* `GET /user/login`
+
+* `GET /user/logout`
+
+* `POST /user/createWithArray`
+
+* `POST /user`
