@@ -1,5 +1,3 @@
-## エンドポイント一覧
-
 * `POST /pet/{petId}/uploadImage`
 
 * `POST /pet`

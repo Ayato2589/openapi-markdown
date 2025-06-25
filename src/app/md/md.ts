@@ -7,7 +7,7 @@ export function generateMd(apiDocSchema: ApiDocSchema): string {
     const tree: Root = {
         type: 'root',
         children: [
-            ...createEndpointList(apiDocSchema.endpoints),
+            createEndpointList(apiDocSchema.endpoints),
         ],
     };
 
