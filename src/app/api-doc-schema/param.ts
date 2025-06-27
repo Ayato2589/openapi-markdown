@@ -1,4 +1,4 @@
-export type Parameter = {
+export type Param = {
     name: string;
     type: 'int' | 'string' | 'date';
     required?: boolean;
