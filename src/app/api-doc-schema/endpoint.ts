@@ -1,18 +1,18 @@
-import { OpenAPI } from "openapi-types";
+import { OpenAPIV3 } from "openapi-types";
 import { parsePaths } from "./doc-parser/paths.js";
+import { Param } from "./param.js";
 
 export type Endpoint = {
     path: string;
     httpMethod: 'GET' | 'PUT' | 'POST' | 'PATCH' | 'DELETE';
-    // pathParameters: Parameter[];
-    // queryParameters: Parameter[];
-    // requestBody?: Model
-    // response: Response[]
+    pathParams: Param[];
+    // queryParams: Parameter[];
+    // reqBody?: Model
+    // resp: Response[]
 };
 
-export function extractEndpoints(apiDoc: OpenAPI.Document): Endpoint[] {
-    const paths = apiDoc.paths;
-    if (!paths) return [];
-
-    return parsePaths(paths);
+export function extractEndpoints(apiDoc: OpenAPIV3.Document): Endpoint[] {
+    // paths: 各エンドポイントの詳細
+    return parsePaths(apiDoc.paths!);
 }
+  

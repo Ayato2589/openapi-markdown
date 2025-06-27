@@ -1,14 +1,14 @@
-import { OpenAPIV2, OpenAPIV3, OpenAPIV3_1 } from "openapi-types";
+import { OpenAPIV3 } from "openapi-types";
 import { Endpoint } from "../endpoint.js";
 import { parsePathItem } from "./path-item.js";
 
-export type Paths = OpenAPIV2.PathsObject | OpenAPIV3.PathsObject | OpenAPIV3_1.PathsObject;
-
-export function parsePaths(paths: Paths): Endpoint[] {
+export function parsePaths(paths: OpenAPIV3.PathsObject): Endpoint[] {
     const endpoints: Endpoint[] = [];
 
+    // path: エンドポイントのパス文字列 (例: "/pet/findByTag", "/users/{userId}")
+    // pathItem: HTTPメソッド、パラメーター、レスポンスなど
     for (const [path, pathItem] of Object.entries(paths)) {
-        endpoints.push(...parsePathItem(path, pathItem));
+        endpoints.push(...parsePathItem(path, pathItem!));
     }
 
     return endpoints;
