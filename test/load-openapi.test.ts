@@ -1,6 +1,6 @@
 import path from "path";
 import { describe, expect, it } from "vitest";
-import { loadOpenapi } from "../src/app/load-openapi.js";
+import { loadOpenapi } from "../src/app/openapi/load-openapi.js";
 
 type TestCase = {
     name: string;
