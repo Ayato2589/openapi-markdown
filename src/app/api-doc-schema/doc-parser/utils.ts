@@ -1,7 +1,20 @@
+import { OptionValueSource } from "commander";
 import { OpenAPIV3 } from "openapi-types";
+import { Endpoint } from "../endpoint.js";
+import { Param } from "../param.js";
 
-export function isPathParameter(
-  parameter: OpenAPIV3.ParameterObject | OpenAPIV3.ReferenceObject
-): parameter is OpenAPIV3.ParameterObject {
-  return !("$ref" in parameter) && parameter.in === "path";
+export function isPathParameter(parameter: OpenAPIV3.ParameterObject): boolean {
+    return parameter.in === 'path';
+}
+
+export function isQueryParameter(parameter: OpenAPIV3.ParameterObject): boolean {
+    return parameter.in === 'query';
+}
+
+export function resolveParamType(schema: OpenAPIV3.SchemaObject): Param['type'] {
+    return schema.type === 'integer' || schema.type === 'number'
+        ? 'int'
+        : schema.format === 'date' || schema.format === 'date-time'
+        ? 'date'
+        : 'string';
 }

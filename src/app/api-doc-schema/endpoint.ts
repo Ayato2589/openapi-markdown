@@ -6,7 +6,7 @@ export type Endpoint = {
     path: string;
     httpMethod: 'GET' | 'PUT' | 'POST' | 'PATCH' | 'DELETE';
     pathParams: Param[];
-    // queryParams: Parameter[];
+    queryParams: Param[];
     // reqBody?: Model
     // resp: Response[]
 };
