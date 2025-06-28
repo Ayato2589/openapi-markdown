@@ -23,5 +23,5 @@ function formatConstraints(param: Param): string {
     if (param.maxLength) constraints.push(`max-length=${param.maxLength}`);
     if (param.regExpPattern) constraints.push(`正規表現: ${param.regExpPattern}`);
 
-    return constraints.join('<br>');
+    return constraints.join('<br>'); // 改行文字で区切る
 }

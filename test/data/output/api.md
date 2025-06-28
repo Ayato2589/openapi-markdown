@@ -4,7 +4,19 @@
 
 # GET /pet/findByStatus
 
+#### クエリパラメーター
+
+| パラメーター | 型      | 制約 | 説明                                                  | 例 |
+| ------ | ------ | -- | --------------------------------------------------- | - |
+| status | string | 必須 | Status values that need to be considered for filter |   |
+
 # GET /pet/findByTags
+
+#### クエリパラメーター
+
+| パラメーター | 型      | 制約 | 説明                | 例 |
+| ------ | ------ | -- | ----------------- | - |
+| tags   | string | 必須 | Tags to filter by |   |
 
 # GET /pet/{petId}
 
@@ -65,6 +77,13 @@
 # POST /user/createWithList
 
 # GET /user/login
+
+#### クエリパラメーター
+
+| パラメーター   | 型      | 制約                                                              | 説明                                   | 例 |
+| -------- | ------ | --------------------------------------------------------------- | ------------------------------------ | - |
+| username | string | 必須\<br>正規表現: ^\[a-zA-Z0-9]+\[a-zA-Z0-9\\.\\-\_]\*\[a-zA-Z0-9]+$ | The user name for login              |   |
+| password | string | 必須                                                              | The password for login in clear text |   |
 
 # GET /user/logout
 

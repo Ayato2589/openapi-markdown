@@ -1,29 +1,43 @@
 import { OpenAPIV3 } from "openapi-types";
-import { Endpoint } from "../endpoint.js";
-import { isPathParameter } from "./utils.js";
+import { isPathParameter, isQueryParameter, resolveParamType } from "./utils.js";
+import { Param } from "../param.js";
 
-export function extractPathParams(operation: OpenAPIV3.OperationObject): Endpoint['pathParams'] {
-    const pathParams: Endpoint['pathParams'] = [];
+export function extractPathParams(parameters: OpenAPIV3.ParameterObject[]): Param[] {
+    if (!parameters) return [];
 
-    const parameters = operation.parameters ?? [];
+    const pathParams: Param[] = [];
 
     for (const parameter of parameters) {
         if (!isPathParameter(parameter)) continue;
     
         const schema = parameter.schema as OpenAPIV3.SchemaObject;
 
-        const paramType: Endpoint['pathParams'][number]['type'] = (
-            schema.type === 'integer' || schema.type === 'number'
-                ? 'int'
-                : schema.format === 'date' || schema.format === 'date-time'
-                ? 'date'
-                : 'string'
-        );
-
         pathParams.push({
             name: parameter.name,
-            type: paramType,
-            required: parameter.required ?? true, // パスパラメータは普通は必須
+            type: resolveParamType(schema),
+            required: true, // パスパラメーターは常に必須
+            description: parameter.description,
+            example: parameter.example ?? (schema.example as string | undefined),
+        });
+    }
+
+  return pathParams;
+}
+
+export function extractQueryParams(parameters: OpenAPIV3.ParameterObject[]): Param[] {
+    if (!parameters) return [];
+
+    const queryParams: Param[] = [];
+
+    for (const parameter of parameters) {
+        if (!isQueryParameter(parameter)) continue;
+
+        const schema = parameter.schema as OpenAPIV3.SchemaObject;
+
+        queryParams.push({
+            name: parameter.name,
+            type: resolveParamType(schema),
+            required: parameter.required ?? false,
             minLength: schema.minLength,
             maxLength: schema.maxLength,
             regExpPattern: schema.pattern,
@@ -32,5 +46,5 @@ export function extractPathParams(operation: OpenAPIV3.OperationObject): Endpoin
         });
     }
 
-  return pathParams;
+    return queryParams;
 }
