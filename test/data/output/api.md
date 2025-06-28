@@ -1,108 +1,93 @@
-* `POST /pet`
+# POST /pet
 
-  | Name | Type | Required | Description |
-  | :--- | :--- | :------: | :---------- |
+# PUT /pet
 
-* `PUT /pet`
+# GET /pet/findByStatus
 
-  | Name | Type | Required | Description |
-  | :--- | :--- | :------: | :---------- |
+# GET /pet/findByTags
 
-* `GET /pet/findByStatus`
+# GET /pet/{petId}
 
-  | Name | Type | Required | Description |
-  | :--- | :--- | :------: | :---------- |
+#### パスパラメーター
 
-* `GET /pet/findByTags`
+| パラメーター | 型   | 制約 | 説明                  | 例 |
+| ------ | --- | -- | ------------------- | - |
+| petId  | int | 必須 | ID of pet to return |   |
 
-  | Name | Type | Required | Description |
-  | :--- | :--- | :------: | :---------- |
+# POST /pet/{petId}
 
-* `GET /pet/{petId}`
+#### パスパラメーター
 
-  | Name  | Type | Required | Description         |
-  | :---- | :--- | :------: | :------------------ |
-  | petId | int  |    Yes   | ID of pet to return |
+| パラメーター | 型   | 制約 | 説明                                 | 例 |
+| ------ | --- | -- | ---------------------------------- | - |
+| petId  | int | 必須 | ID of pet that needs to be updated |   |
 
-* `POST /pet/{petId}`
+# DELETE /pet/{petId}
 
-  | Name  | Type | Required | Description                        |
-  | :---- | :--- | :------: | :--------------------------------- |
-  | petId | int  |    Yes   | ID of pet that needs to be updated |
+#### パスパラメーター
 
-* `DELETE /pet/{petId}`
+| パラメーター | 型   | 制約 | 説明               | 例 |
+| ------ | --- | -- | ---------------- | - |
+| petId  | int | 必須 | Pet id to delete |   |
 
-  | Name  | Type | Required | Description      |
-  | :---- | :--- | :------: | :--------------- |
-  | petId | int  |    Yes   | Pet id to delete |
+# POST /pet/{petId}/uploadImage
 
-* `POST /pet/{petId}/uploadImage`
+#### パスパラメーター
 
-  | Name  | Type | Required | Description         |
-  | :---- | :--- | :------: | :------------------ |
-  | petId | int  |    Yes   | ID of pet to update |
+| パラメーター | 型   | 制約 | 説明                  | 例 |
+| ------ | --- | -- | ------------------- | - |
+| petId  | int | 必須 | ID of pet to update |   |
 
-* `GET /store/inventory`
+# GET /store/inventory
 
-  | Name | Type | Required | Description |
-  | :--- | :--- | :------: | :---------- |
+# POST /store/order
 
-* `POST /store/order`
+# GET /store/order/{orderId}
 
-  | Name | Type | Required | Description |
-  | :--- | :--- | :------: | :---------- |
+#### パスパラメーター
 
-* `GET /store/order/{orderId}`
+| パラメーター  | 型   | 制約 | 説明                                 | 例 |
+| ------- | --- | -- | ---------------------------------- | - |
+| orderId | int | 必須 | ID of pet that needs to be fetched |   |
 
-  | Name    | Type | Required | Description                        |
-  | :------ | :--- | :------: | :--------------------------------- |
-  | orderId | int  |    Yes   | ID of pet that needs to be fetched |
+# DELETE /store/order/{orderId}
 
-* `DELETE /store/order/{orderId}`
+#### パスパラメーター
 
-  | Name    | Type   | Required | Description                              |
-  | :------ | :----- | :------: | :--------------------------------------- |
-  | orderId | string |    Yes   | ID of the order that needs to be deleted |
+| パラメーター  | 型      | 制約 | 説明                                       | 例 |
+| ------- | ------ | -- | ---------------------------------------- | - |
+| orderId | string | 必須 | ID of the order that needs to be deleted |   |
 
-* `POST /user`
+# POST /user
 
-  | Name | Type | Required | Description |
-  | :--- | :--- | :------: | :---------- |
+# POST /user/createWithArray
 
-* `POST /user/createWithArray`
+# POST /user/createWithList
 
-  | Name | Type | Required | Description |
-  | :--- | :--- | :------: | :---------- |
+# GET /user/login
 
-* `POST /user/createWithList`
+# GET /user/logout
 
-  | Name | Type | Required | Description |
-  | :--- | :--- | :------: | :---------- |
+# GET /user/{username}
 
-* `GET /user/login`
+#### パスパラメーター
 
-  | Name | Type | Required | Description |
-  | :--- | :--- | :------: | :---------- |
+| パラメーター   | 型      | 制約 | 説明                                                        | 例 |
+| -------- | ------ | -- | --------------------------------------------------------- | - |
+| username | string | 必須 | The name that needs to be fetched. Use user1 for testing. |   |
 
-* `GET /user/logout`
+# PUT /user/{username}
 
-  | Name | Type | Required | Description |
-  | :--- | :--- | :------: | :---------- |
+#### パスパラメーター
 
-* `GET /user/{username}`
+| パラメーター   | 型      | 制約 | 説明                           | 例 |
+| -------- | ------ | -- | ---------------------------- | - |
+| username | string | 必須 | name that need to be deleted |   |
 
-  | Name     | Type   | Required | Description                                               |
-  | :------- | :----- | :------: | :-------------------------------------------------------- |
-  | username | string |    Yes   | The name that needs to be fetched. Use user1 for testing. |
+# DELETE /user/{username}
 
-* `PUT /user/{username}`
+#### パスパラメーター
 
-  | Name     | Type   | Required | Description                  |
-  | :------- | :----- | :------: | :--------------------------- |
-  | username | string |    Yes   | name that need to be deleted |
-
-* `DELETE /user/{username}`
-
-  | Name     | Type   | Required | Description                       |
-  | :------- | :----- | :------: | :-------------------------------- |
-  | username | string |    Yes   | The name that needs to be deleted |
+| パラメーター   | 型      | 制約 | 説明                                | 例 |
+| -------- | ------ | -- | --------------------------------- | - |
+| username | string | 必須 | The name that needs to be deleted |   |
