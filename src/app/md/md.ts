@@ -1,18 +1,15 @@
-import { Root } from "mdast";
 import { toMarkdown } from "mdast-util-to-markdown";
 import { gfmToMarkdown } from "mdast-util-gfm";
 import { ApiDocSchema } from "../api-doc-schema/api-doc-schema.js";
-import { createEndpointList } from "./endpoints-list.js";
+import { Root } from "./mdast/Root.js";
+import { EndpointList } from "./features/endpoints-list.js";
 
 export function generateMd(apiDocSchema: ApiDocSchema): string {
-    const tree: Root = {
-        type: "root",
-        children: [
-            createEndpointList(apiDocSchema.endpoints),
-        ],
-    };
+    const tree = Root([
+        ...EndpointList(apiDocSchema.endpoints),
+    ]);
 
     return toMarkdown(tree, {
-        extensions: [gfmToMarkdown()],
+        extensions: [gfmToMarkdown()], // テーブル(表)を出力するためにGFM拡張が必要
     });
 }
