@@ -1,6 +1,52 @@
 # POST /pet
 
+#### リクエストボディー
+
+```json
+{
+  "id": 123,
+  "category": {
+    "id": 123,
+    "name": "example string"
+  },
+  "name": "doggie",
+  "photoUrls": [
+    "example string"
+  ],
+  "tags": [
+    {
+      "id": 123,
+      "name": "example string"
+    }
+  ],
+  "status": "available"
+}
+```
+
 # PUT /pet
+
+#### リクエストボディー
+
+```json
+{
+  "id": 123,
+  "category": {
+    "id": 123,
+    "name": "example string"
+  },
+  "name": "doggie",
+  "photoUrls": [
+    "example string"
+  ],
+  "tags": [
+    {
+      "id": 123,
+      "name": "example string"
+    }
+  ],
+  "status": "available"
+}
+```
 
 # GET /pet/findByStatus
 
@@ -54,6 +100,19 @@
 
 # POST /store/order
 
+#### リクエストボディー
+
+```json
+{
+  "id": 123,
+  "petId": 123,
+  "quantity": 123,
+  "shipDate": "2025-01-01T00:00:00Z",
+  "status": "placed",
+  "complete": true
+}
+```
+
 # GET /store/order/{orderId}
 
 #### パスパラメーター
@@ -72,9 +131,58 @@
 
 # POST /user
 
+#### リクエストボディー
+
+```json
+{
+  "id": 123,
+  "username": "example string",
+  "firstName": "example string",
+  "lastName": "example string",
+  "email": "example string",
+  "password": "example string",
+  "phone": "example string",
+  "userStatus": 123
+}
+```
+
 # POST /user/createWithArray
 
+#### リクエストボディー
+
+```json
+[
+  {
+    "id": 123,
+    "username": "example string",
+    "firstName": "example string",
+    "lastName": "example string",
+    "email": "example string",
+    "password": "example string",
+    "phone": "example string",
+    "userStatus": 123
+  }
+]
+```
+
 # POST /user/createWithList
+
+#### リクエストボディー
+
+```json
+[
+  {
+    "id": 123,
+    "username": "example string",
+    "firstName": "example string",
+    "lastName": "example string",
+    "email": "example string",
+    "password": "example string",
+    "phone": "example string",
+    "userStatus": 123
+  }
+]
+```
 
 # GET /user/login
 
@@ -102,6 +210,21 @@
 | パラメーター   | 型      | 制約 | 説明                           | 例 |
 | -------- | ------ | -- | ---------------------------- | - |
 | username | string | 必須 | name that need to be deleted |   |
+
+#### リクエストボディー
+
+```json
+{
+  "id": 123,
+  "username": "example string",
+  "firstName": "example string",
+  "lastName": "example string",
+  "email": "example string",
+  "password": "example string",
+  "phone": "example string",
+  "userStatus": 123
+}
+```
 
 # DELETE /user/{username}
 

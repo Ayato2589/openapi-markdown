@@ -1,3 +1,6 @@
 export type Model = {
-    children: Model[];
+  name?: string;
+  type?: string;
+  example?: any;
+  children?: Model[];
 };
