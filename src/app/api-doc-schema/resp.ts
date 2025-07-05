@@ -1,6 +1,6 @@
 import { Model } from "./model.js";
 
-export type Response = {
+export type Resp = {
     httpStatusCode: number;
     body?: Model;
 }
