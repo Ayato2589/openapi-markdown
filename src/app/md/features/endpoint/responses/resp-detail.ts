@@ -1,7 +1,7 @@
 import { BlockContent } from "mdast";
-import { Resp } from "../../../../api-doc-schema/resp";
-import { Heading } from "../../../mdast/Heading";
-import { CodeBlock } from "../../../mdast/CodeBlock";
+import { Resp } from "../../../../api-doc-schema/resp.js";
+import { Heading } from "../../../mdast/Heading.js";
+import { CodeBlock } from "../../../mdast/CodeBlock.js";
 
 export function RespDetail(resp: Resp): BlockContent[] {
     return [

@@ -1,13 +1,11 @@
 {
   "compilerOptions": {
-    "module": "esnext",
-    "moduleResolution": "bundler",
-    "target": "esnext",
-    "strict": true,
+    "module": "node16",
+    "target": "es2020",
+    "moduleResolution": "node16",
     "esModuleInterop": true,
-    "forceConsistentCasingInFileNames": true,
-    "skipLibCheck": true,
-    "resolveJsonModule": true,
-    "outDir": "dist"
+    "allowSyntheticDefaultImports": true,
+    "strict": true,
+    "skipLibCheck": true
   }
 }

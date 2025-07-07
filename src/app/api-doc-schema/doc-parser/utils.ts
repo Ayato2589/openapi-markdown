@@ -1,7 +1,7 @@
 import { OptionValueSource } from "commander";
 import { OpenAPIV3 } from "openapi-types";
-import { Endpoint } from "../endpoint";
-import { Param } from "../param";
+import { Endpoint } from "../endpoint.js";
+import { Param } from "../param.js";
 
 export function isPathParameter(parameter: OpenAPIV3.ParameterObject): boolean {
     return parameter.in === 'path';

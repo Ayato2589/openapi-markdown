@@ -1,8 +1,8 @@
 import { OpenAPIV3 } from "openapi-types";
-import { Endpoint } from "../endpoint";
-import { extractPathParams, extractQueryParams } from "./parameters";
-import { parseRequestBody } from "./request-body";
-import { parseResponses } from "./responses";
+import { Endpoint } from "../endpoint.js";
+import { extractPathParams, extractQueryParams } from "./parameters.js";
+import { parseRequestBody } from "./request-body.js";
+import { parseResponses } from "./responses.js";
 
 export function parseOperation(path: string, httpMethod: Endpoint['httpMethod'], operation: OpenAPIV3.OperationObject): Endpoint {
     return {

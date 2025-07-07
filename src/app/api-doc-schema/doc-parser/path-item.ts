@@ -1,6 +1,6 @@
 import { OpenAPIV3 } from "openapi-types";
-import { Endpoint } from "../endpoint";
-import { parseOperation } from "./operation";
+import { Endpoint } from "../endpoint.js";
+import { parseOperation } from "./operation.js";
 
 export function parsePathItem(path: string, pathItem: OpenAPIV3.PathItemObject): Endpoint[] {
     const endpoints: Endpoint[] = [];

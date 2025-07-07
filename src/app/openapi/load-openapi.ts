@@ -1,6 +1,6 @@
 import SwaggerParser from '@apidevtools/swagger-parser';
 import type { OpenAPIV3 } from 'openapi-types';
-import { isOpenAPIV3 } from './version';
+import { isOpenAPIV3 } from './version.js';
 
 export async function loadOpenapi(filePath: string): Promise<OpenAPIV3.Document> {
     try {

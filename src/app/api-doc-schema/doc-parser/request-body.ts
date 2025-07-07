@@ -1,5 +1,5 @@
 import { OpenAPIV3 } from "openapi-types";
-import { Model } from "../model";
+import { Model } from "../model.js";
 
 export function parseRequestBody(requestBody: OpenAPIV3.RequestBodyObject | undefined): Model | undefined {
     if (!requestBody) return undefined;

@@ -1,6 +1,6 @@
 import { BlockContent } from "mdast";
-import { Param } from "../../../../api-doc-schema/param";
-import { Table } from "../../../mdast/Table";
+import { Param } from "../../../../api-doc-schema/param.js";
+import { Table } from "../../../mdast/Table.js";
 
 export function ParamsTable(params: Param[]): BlockContent {
     return Table(

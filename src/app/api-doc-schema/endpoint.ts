@@ -1,8 +1,8 @@
 import { OpenAPIV3 } from "openapi-types";
-import { parsePaths } from "./doc-parser/paths";
-import { Param } from "./param";
-import { Model } from "./model";
-import { Resp } from "./resp";
+import { parsePaths } from "./doc-parser/paths.js";
+import { Param } from "./param.js";
+import { Model } from "./model.js";
+import { Resp } from "./resp.js";
 
 export type Endpoint = {
     path: string;

@@ -1,5 +1,5 @@
 import { OpenAPIV3 } from "openapi-types";
-import { Endpoint, extractEndpoints } from "./endpoint";
+import { Endpoint, extractEndpoints } from "./endpoint.js";
 
 export type ApiDocSchema = {
     endpoints: Endpoint[];

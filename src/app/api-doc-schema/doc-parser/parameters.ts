@@ -1,6 +1,6 @@
 import { OpenAPIV3 } from "openapi-types";
-import { isPathParameter, isQueryParameter, resolveParamType } from "./utils";
-import { Param } from "../param";
+import { isPathParameter, isQueryParameter, resolveParamType } from "./utils.js";
+import { Param } from "../param.js";
 
 export function extractPathParams(parameters: OpenAPIV3.ParameterObject[]): Param[] {
     if (!parameters) return [];

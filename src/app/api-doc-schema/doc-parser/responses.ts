@@ -1,6 +1,6 @@
 import { OpenAPIV3 } from "openapi-types";
-import { Resp } from "../resp";
-import { schemaToModel } from "./request-body";
+import { Resp } from "../resp.js";
+import { schemaToModel } from "./request-body.js";
 
 export function parseResponses(responses: OpenAPIV3.ResponsesObject | undefined): Resp[] {
     if (!responses) return [];

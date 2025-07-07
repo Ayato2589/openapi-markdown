@@ -1,7 +1,7 @@
 import fs from "fs/promises";
-import { generateMd } from "./md/md";
-import { generateApiDocSchema } from "./api-doc-schema/api-doc-schema";
-import { loadOpenapi } from "./openapi/load-openapi";
+import { generateMd } from "./md/md.js";
+import { generateApiDocSchema } from "./api-doc-schema/api-doc-schema.js";
+import { loadOpenapi } from "./openapi/load-openapi.js";
 
 export async function runApp(inputPath: string, outputPath: string) {
     // yamlを読み込む
