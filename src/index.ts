@@ -1,5 +1,5 @@
-import { runApp } from "./app/app.js";
-import { parseArgs } from "./cli/args.js";
+import { runApp } from "./app/app";
+import { parseArgs } from "./cli/args";
 
 async function main(argv: string[]) {
     const { inputPath, outputPath } = parseArgs(argv);

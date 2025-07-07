@@ -2,11 +2,14 @@
   "name": "@ayato2589/openapi-markdown",
   "version": "1.0.18",
   "description": "",
-  "main": "dist/index.js-",
   "type": "module",
+  "main": "dist/index.js",
+  "bin": {
+    "openapi-markdown": "./dist/index.js"
+  },
   "scripts": {
     "dev": "node --loader ts-node/esm src/index.ts",
-    "build": "webpack",
+    "build": "webpack --config webpack.config.cjs",
     "start": "node dist/index.js",
     "test": "vitest"
   },

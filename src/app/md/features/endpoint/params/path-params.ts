@@ -1,7 +1,7 @@
 import { BlockContent } from "mdast";
-import { Heading } from "../../../mdast/Heading.js";
-import { Param } from "../../../../api-doc-schema/param.js";
-import { ParamsTable } from "./params-table.js";
+import { Heading } from "../../../mdast/Heading";
+import { Param } from "../../../../api-doc-schema/param";
+import { ParamsTable } from "./params-table";
 
 export function PathParams(pathParams: Param[]): BlockContent[] {
     // パスパラメーターがない場合は何も出力しない
