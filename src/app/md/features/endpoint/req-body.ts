@@ -1,7 +1,7 @@
 import { BlockContent } from "mdast";
-import { Model } from "../../../api-doc-schema/model.js";
-import { Heading } from "../../mdast/Heading.js";
-import { CodeBlock } from "../../mdast/CodeBlock.js";
+import { Model } from "../../../api-doc-schema/model";
+import { Heading } from "../../mdast/Heading";
+import { CodeBlock } from "../../mdast/CodeBlock";
 
 export function ReqBody(model: Model | undefined): BlockContent[] {
     if (!model) return [];
