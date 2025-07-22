@@ -1,0 +1,14 @@
+!dist/
+node_modules/
+.git/
+src/
+test/
+*.log
+*.tsbuildinfo
+!dist/
+node_modules/
+.git/
+src/
+test/
+*.log
+*.tsbuildinfo
