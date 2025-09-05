@@ -1,6 +1,6 @@
 {
   "name": "@ayato2589/openapi-markdown",
-  "version": "1.0.22",
+  "version": "1.0.23",
   "description": "",
   "type": "module",
   "main": "dist/index.js",
