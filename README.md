@@ -1,5 +1,7 @@
 # openapi-markdown
 
+OpenAPIスキーマが書かれたyamlをマークダウンに変換するCLI
+
 ### インストール
 
 ```bash
