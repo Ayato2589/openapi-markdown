@@ -7,3 +7,7 @@ OpenAPIスキーマが書かれたyamlをマークダウンに変換するCLI
 ```bash
 npm install @ayato2589/openapi-markdown
 ```
+
+```bash
+npx openapi-markdown <api.yaml> -o <api.md>
+```
